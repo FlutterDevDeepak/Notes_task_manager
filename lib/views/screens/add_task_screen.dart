@@ -38,21 +38,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: Transform.scale(
-        //   scale: .7,
-        //   child: InkWell(
-        //     onTap: () {
-        //       Get.back();
-        //     },
-        //     child: const CircleAvatar(
-        //         maxRadius: 20,
-        //         backgroundColor: ColorsRes.skyColor,
-        //         child: Icon(
-        //           Icons.arrow_back_ios,
-        //           size: 20,
-        //         )),
-        //   ),
-        // ),
         backgroundColor: ColorsRes.whiteColor,
         elevation: 0,
         title: const Text("Add Notes"),
@@ -189,9 +174,29 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _colorPallete(),
-                  MyButton(label: "Create Task", onTap: () => _validateData()),
+                  // MyButton(label: "Create Task", onTap: () => _validateData()),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                onTap: () => _validateData(),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.indigo,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Text(
+                    "Create Task",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -207,8 +212,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
       Get.snackbar(
         "Required",
         "All fields are required.",
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.white,
+        // snackStyle: SnackStyle.GROUNDED,
+        snackPosition: SnackPosition.TOP,
+        // backgroundColor: Colors.white,
         icon: const Icon(
           Icons.warning_amber_rounded,
           color: Colors.red,
