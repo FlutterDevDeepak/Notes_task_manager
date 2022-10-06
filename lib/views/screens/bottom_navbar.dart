@@ -60,7 +60,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       ),
                       label: ""),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.person_outline,
+                      icon: Icon(Icons.task,
                           color: value.page == 2
                               ? ColorsRes.blackColor
                               : ColorsRes.grayColor,
